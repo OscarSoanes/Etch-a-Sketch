@@ -28,6 +28,6 @@ for (let y = 0; y < 16; y++) {
 
 const pixels = document.querySelectorAll(".pixel");
 
-pixels.forEach(pixel => pixel.addEventListener('click', function (e) {
-    e.target.style.background = 'blue';
+pixels.forEach(pixel => pixel.addEventListener('mouseover', function (e) {
+    pixel.classList.add("coloured")
 }));
