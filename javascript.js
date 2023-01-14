@@ -30,28 +30,53 @@ function clearGrid() {
     pixels.forEach(pixel => pixel.remove());
 }
 
-makeGrid(16);
-
-// hover effect
-const pixels = document.querySelectorAll(".pixel");
-
-pixels.forEach(pixel => pixel.addEventListener('mouseover', function (e) {
-    pixel.classList.add("coloured");
-}));
-
-// assign grid count
-const btnCount = document.querySelector(".pixelCounter");
-btnCount.addEventListener('click', function (e) {
+function btnCounter(e) {
     const length = prompt("How many pixels do you want?")
-    
+
     if (length < 4) {
         alert("Pixel count is too little, please enter a different number")
         return
     } else if (length > 64) {
         alert("Pixel count is too high, please enter a different value")
         return
+    } else if (isNaN(length)) {
+        alert("Input was not a number, please enter a different value")
+        return
     }
 
     clearGrid()
     makeGrid(length)
-})
+    hover()
+}
+
+function hover() {
+    const pixels = document.querySelectorAll(".pixel");
+    
+    pixels.forEach(pixel => pixel.addEventListener('mouseover', function (e) {
+        
+        if (rainbow == false) {
+            pixel.classList.add("coloured");
+            return
+        }
+        pixel.style.backgroundColor = 'blue'
+    }));
+}
+
+// Start
+const btnCount = document.querySelector(".pixelCounter");
+btnCount.addEventListener('click', btnCounter)
+
+var rainbow = false
+
+const btnBlack = document.querySelector(".black");
+btnBlack.addEventListener('click', function (e) {
+    rainbow = false;
+});
+
+const btnRainbow = document.querySelector(".rainbow");
+btnRainbow.addEventListener('click', function (e) {
+    rainbow = true;
+});
+
+makeGrid(16);
+hover()
