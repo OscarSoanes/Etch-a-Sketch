@@ -20,17 +20,17 @@ body {
     display: inline-flex;
     align-items: center;
     background-color: #3D3D3D;
-    padding: 1em;
-    border-radius: .8em;
+    padding: .3rem;
+    border-radius: .3em;
     box-shadow: .3em .3em #181818;
 }
 
 h1 {
     padding: 1.2rem;
     font-family: 'Roboto', sans-serif;
-    font-size: 5em;
+    font-size: 2.2em;
     color: #F2F2F2;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .left {
@@ -40,11 +40,11 @@ h1 {
 }
 
 button {
-    width: 15rem;
-    height: 6rem;
-    margin-top: 3rem;
+    width: 150px;
+    height: 60px;
+    margin-top: 40px;
 
-    font-size: 2em;
+    font-size: 1.1em;
     box-shadow: .1em .1em #181818;
 
     border: 0px;
@@ -60,8 +60,8 @@ button {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    width: 960px;
-    height: 960px;
+    width: 500px;
+    height: 500px;
     
     border: 1px solid;
 }
@@ -70,3 +70,6 @@ button {
     background-color: black;
 }
 
+.pixel {
+    outline: 1px solid #A4A4A4;
+}

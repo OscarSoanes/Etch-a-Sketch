@@ -14,10 +14,7 @@ function makeGrid(pixels) {
             column.classList.add("pixel");
             column.style.width = `${size / pixels}px`;
             column.style.height = `${size / pixels}px`;
-
-            column.style.outline = "1px solid";
-            // column.style.outlineOffset = "1px";
-
+            
             row.appendChild(column);
         }
         grid.appendChild(row);
