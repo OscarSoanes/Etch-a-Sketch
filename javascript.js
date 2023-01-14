@@ -25,3 +25,9 @@ for (let y = 0; y < 16; y++) {
 
     grid.appendChild(row);
 }
+
+const pixels = document.querySelectorAll(".pixel");
+
+pixels.forEach(pixel => pixel.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+}));
