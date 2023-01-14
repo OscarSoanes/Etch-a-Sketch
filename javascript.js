@@ -41,24 +41,35 @@ function btnCounter(e) {
         return
     } else if (isNaN(length)) {
         alert("Input was not a number, please enter a different value")
-        return
+        return;
     }
 
-    clearGrid()
-    makeGrid(length)
-    hover()
+    clearGrid();
+    makeGrid(length);
+    hover();
 }
 
 function hover() {
+    function createRandomColour() {
+        var letters = "0123456789ABCDEF";
+        var colour = "#";
+        for (let i = 0; i < 6; i++) {
+            colour += letters[Math.floor(Math.random() * 16)];
+        }
+        return colour
+    }
+
     const pixels = document.querySelectorAll(".pixel");
     
     pixels.forEach(pixel => pixel.addEventListener('mouseover', function (e) {
         
         if (rainbow == false) {
             pixel.classList.add("coloured");
-            return
+            pixel.style.backgroundColor = ""
+            return;
         }
-        pixel.style.backgroundColor = 'blue'
+
+        pixel.style.backgroundColor = `${createRandomColour()}`;
     }));
 }
 
