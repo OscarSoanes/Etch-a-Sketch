@@ -80,12 +80,19 @@ btnCount.addEventListener('click', btnCounter)
 var rainbow = false
 
 const btnBlack = document.querySelector(".black");
+const btnRainbow = document.querySelector(".rainbow");
+btnBlack.classList.add("selected");
+
+// Event handlers
 btnBlack.addEventListener('click', function (e) {
+    btnBlack.classList.add("selected");
+    btnRainbow.classList.remove("selected");
     rainbow = false;
 });
 
-const btnRainbow = document.querySelector(".rainbow");
 btnRainbow.addEventListener('click', function (e) {
+    btnBlack.classList.remove("selected");
+    btnRainbow.classList.add("selected");
     rainbow = true;
 });
 
